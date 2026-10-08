@@ -55,6 +55,25 @@ Tudo liga e desliga:
 
 ## Instalar
 
+### Jeito mais fácil: peça pra sua IA
+
+Cole este prompt numa IA que roda comandos no seu Mac (**Claude Code** na aba Code do app do Claude, **Codex** no app do ChatGPT, Cursor ou Antigravity). O chat comum do claude.ai ou do chatgpt.com não tem acesso ao computador.
+
+```text
+Instale pra mim o app Open Loops a partir do código oficial no GitHub:
+https://github.com/juliooandradee/open-loops
+
+1. Confira se este Mac tem macOS 14 (Sonoma) ou mais novo.
+2. Veja se o Swift está instalado (swift --version). Se não estiver, rode xcode-select --install, me avise e espere eu concluir a janela de instalação da Apple.
+3. Clone o repositório numa pasta temporária e rode ./scripts/install.sh — ele compila o app e instala em ~/Applications.
+4. Não instale nenhum outro programa, pacote ou dependência e não mexa em nada além disso.
+5. No fim, confirme que o Open Loops abriu e me lembre de aceitar os pedidos de permissão do Chrome e das notificações.
+```
+
+Compilado no seu próprio Mac, o app abre sem o aviso de “desenvolvedor não identificado”.
+
+### Baixar o app pronto
+
 1. Baixe o `Open-Loops.zip` na página de [Releases](../../releases/latest) e arraste o **Open Loops** pra pasta **Aplicativos**.
 2. Na primeira vez, o macOS avisa que o app é de um desenvolvedor não identificado (ele não é assinado pela Apple). Vá em **Ajustes do Sistema › Privacidade e Segurança** e clique em **Abrir Mesmo Assim**.
 3. Quando o macOS pedir, permita que o Open Loops controle o **Google Chrome** (só pra listar as abas de IA) e mande **notificações**.
