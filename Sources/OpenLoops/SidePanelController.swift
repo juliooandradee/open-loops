@@ -29,6 +29,15 @@ enum PanelLayout {
 /// Never activates the app (the user stays in their app), but can take clicks right away.
 private final class SidePanel: NSPanel {
     override var canBecomeKey: Bool { true }
+
+    /// A non-key window spends the first click on becoming key, and views inside the list's scroll view don't accept
+    /// "first mouse" — so a row needed two clicks. Becoming key before dispatching lets that same click reach the row.
+    override func sendEvent(_ event: NSEvent) {
+        if event.type == .leftMouseDown, !isKeyWindow {
+            makeKey()
+        }
+        super.sendEvent(event)
+    }
 }
 
 private final class FirstMouseHostingView<Content: View>: NSHostingView<Content> {
